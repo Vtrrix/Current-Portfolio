@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$theme: #eb0027e5;
+
+@mixin heading($fsize, $width, $top, $left) {
+  font-family: "Roboto", sans-serif;
+  font-size: $fsize;
+  color: #ffffffc0;
+  border-left: 5px solid $theme;
+  width: $width;
+  padding: 5px 12px;
+  position: relative;
+  left: $left;
+  top: $top;
+}
+
+@mixin flexit($flex_direction) {
+  display: flex;
+  flex-direction: $flex_direction;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin buttons {
+  background-color: $theme;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  @include flexit(row);
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  height: 0;
+  overflow-y: hidden;
+  &:hover,
+  &:active {
+    background-color: #ff002b;
+  }
+}
+
+//mixins for contact page
+@mixin u_stuff {
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 15px;
+  pointer-events: none;
+  transition: 0.2s;
+}
+body {
+  overflow: hidden;
+}
+#landing {
+  background: black;
+  opacity: 0.9;
+  overflow: auto;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: #ffffffcb;
+  @include flexit(column);
+
+  #navbar {
+    background: rgba(0, 0, 0, 0.527);
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+
+    .nav_list {
+      position: relative;
+      left: 10%;
+      height: 60%;
+      font-family: "Montserrat", sans-serif;
+      margin: 16vh 8vw;
+      text-decoration: none;
+      list-style-type: none;
+      font-weight: 800;
+      z-index: 101;
+      li {
+        font-size: 3rem;
+        padding: 10px;
+        z-index: 2;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+          font-size: 3.8rem;
+          transition: 0.2s;
+        }
+      }
+    }
+
+    .cross {
+      width: fit-content;
+      position: absolute;
+      top: 7%;
+      right: 7%;
+      img {
+        z-index: 4;
+        width: 0;
+        // width: 3.5rem;
+        opacity: 0.7;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #burger {
+    @include flexit(column);
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+    position: absolute;
+    transition: 1s ease-in-out;
+    transition-delay: 0.2s;
+    // left: 1.5vw;
+    // top: 2.5vh;
+
+    .line1,
+    .line2,
+    .line3 {
+      cursor: pointer;
+      height: 33.33%;
+      margin: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.801);
+    }
+  }
+
+  #greeting {
+    min-width: fit-content;
+    @include flexit(column);
+    height: fit-content;
+
+    .intro {
+      text-align: center;
+      width: fit-content;
+      font-family: "Montserrat", sans-serif;
+      font-size: 3rem;
+      width: 100%;
+      z-index: 1;
+    }
+    .vtx {
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 6.5em;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .sphere-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 580px;
+    height: 580px;
+    margin: -290px 0 0 -290px;
+  }
+
+  .sphere path {
+    fill: url(#sphereGradient);
+    stroke-width: 1px;
+    stroke: rgba(80, 80, 80, 0.35);
+    backface-visibility: hidden;
+  }
+
+  @media (min-width: 500px) {
+    .sphere path {
+      stroke-width: 0.4px;
+    }
+  }
+}

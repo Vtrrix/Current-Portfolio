@@ -4,18 +4,14 @@
   box-sizing: border-box;
 }
 
-$theme: #eb0027e5;
+$theme: #2005bb;
 
-@mixin heading($fsize, $width, $top, $left) {
+@mixin heading() {
   font-family: "Roboto", sans-serif;
-  font-size: $fsize;
-  color: #ffffffc0;
-  border-left: 5px solid $theme;
-  width: $width;
+  font-size: 4rem;
+  color: #ffffffcb;
+  border-left: 7px solid $theme;
   padding: 5px 12px;
-  position: relative;
-  left: $left;
-  top: $top;
 }
 
 @mixin flexit($flex_direction) {
@@ -40,7 +36,7 @@ $theme: #eb0027e5;
   overflow-y: hidden;
   &:hover,
   &:active {
-    background-color: #ff002b;
+    background-color: #2004c4;
   }
 }
 
@@ -54,135 +50,254 @@ $theme: #eb0027e5;
   transition: 0.2s;
 }
 body {
-  overflow: hidden;
-}
-#landing {
-  background: black;
-  opacity: 0.9;
-  overflow: auto;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  min-height: 100vh;
-  color: #ffffffcb;
-  @include flexit(column);
-
-  #navbar {
-    background: rgba(0, 0, 0, 0.527);
-    width: 0;
-    height: 0;
+  .arrow {
+    width: 3.4rem;
     position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.2s ease-in-out;
-    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .left {
+    left: 4%;
+    top: 45%;
+    transform: rotate(180deg);
+  }
+  .right {
+    right: 4%;
+    top: 45%;
+  }
+  .down {
+    right: 48%;
+    bottom: 4%;
+    transform: rotate(90deg);
+  }
+  overflow: hidden;
+  .colorit {
+    color: $theme;
+  }
 
-    .nav_list {
+  #top {
+    min-height: 100vh;
+    width: 2vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    #landing {
+      overflow: hidden;
       position: relative;
-      left: 10%;
-      height: 60%;
-      font-family: "Montserrat", sans-serif;
-      margin: 16vh 8vw;
-      text-decoration: none;
-      list-style-type: none;
-      font-weight: 800;
-      z-index: 101;
-      li {
-        font-size: 3rem;
-        padding: 10px;
-        z-index: 2;
-        cursor: pointer;
+      grid-column: 1/2;
+      background: linear-gradient(to right, #000000, #222222);
+      opacity: 0.9;
+      width: 100vw;
+      background-size: cover;
+      min-height: 100vh;
+      color: #ffffffcb;
+      @include flexit(column);
 
-        &:hover,
-        &:active {
-          font-size: 3.8rem;
-          transition: 0.2s;
+      #navbar {
+        background: rgba(0, 0, 0, 0.788);
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.2s ease-in-out;
+        overflow: hidden;
+
+        .nav_list {
+          position: relative;
+          left: 10%;
+          height: 60%;
+          font-family: "Montserrat", sans-serif;
+          margin: 16vh 8vw;
+          text-decoration: none;
+          list-style-type: none;
+          font-weight: 800;
+          z-index: 101;
+          li {
+            font-size: 3rem;
+            padding: 10px;
+            z-index: 2;
+            cursor: pointer;
+
+            &:hover,
+            &:active {
+              font-size: 3.8rem;
+              transition: 0.2s;
+              color: $theme;
+            }
+          }
+        }
+
+        .cross {
+          width: fit-content;
+          position: absolute;
+          top: 7%;
+          right: 7%;
+          img {
+            z-index: 4;
+            width: 0;
+            // width: 3.5rem;
+            opacity: 0.9;
+            cursor: pointer;
+          }
+        }
+      }
+
+      #burger {
+        @include flexit(column);
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        z-index: 3;
+        position: absolute;
+        transition: 1s ease-in-out;
+        transition-delay: 0.2s;
+        // left: 1.5vw;
+        // top: 2.5vh;
+
+        .line1,
+        .line2,
+        .line3 {
+          cursor: pointer;
+          height: 33.33%;
+          margin: 0;
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.801);
+        }
+      }
+
+      #greeting {
+        min-width: fit-content;
+        @include flexit(column);
+        height: fit-content;
+
+        .intro {
+          text-align: center;
+          width: fit-content;
+          font-family: "Montserrat", sans-serif;
+          font-size: 3rem;
+          width: 100%;
+          z-index: 1;
+        }
+        .vtx {
+          text-align: center;
+          font-family: "Roboto", sans-serif;
+          font-size: 6.5em;
+          width: 100%;
+          z-index: 1;
+        }
+      }
+
+      .sphere-animation {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 580px;
+        height: 580px;
+        margin: -290px 0 0 -290px;
+      }
+
+      .sphere path {
+        fill: url(#sphereGradient);
+        stroke-width: 1px;
+        stroke: rgba(80, 80, 80, 0.35);
+        backface-visibility: hidden;
+      }
+
+      @media (min-width: 500px) {
+        .sphere path {
+          stroke-width: 0.4px;
         }
       }
     }
 
-    .cross {
-      width: fit-content;
-      position: absolute;
-      top: 7%;
-      right: 7%;
-      img {
-        z-index: 4;
-        width: 0;
-        // width: 3.5rem;
-        opacity: 0.7;
-        cursor: pointer;
+    #about {
+      position: relative;
+      background: linear-gradient(to right, #000000, #434343);
+      z-index: 100;
+      width: 100vw;
+      min-height: 100vh;
+      overflow: auto;
+      grid-column: 2/3;
+
+      .aboutTitle {
+        @include heading();
+        margin: 5vh 0 0 3vw;
       }
-    }
-  }
+      .randomwords {
+        @include flexit(column);
+        transform: translateY(10vh);
+        .randoms {
+          color: rgb(136, 136, 136);
+          font-family: "Roboto", sans-serif;
+        }
+        .R1 {
+          margin-bottom: -40px;
+        }
+        .R2 {
+          margin-bottom: -15px;
+        }
+        .R1,
+        .R2,
+        .R3 {
+          @include flexit("row");
+          width: 100%;
+        }
+        .r1,
+        .r2,
+        .r3,
+        .r4,
+        .r5,
+        .r6 {
+          width: 50%;
+          transition: 1s ease-in-out;
+        }
+        .r1 {
+          font-size: 7rem;
+          text-align: end;
+        }
+        .r2 {
+          font-size: 2rem;
+          text-align: end;
+        }
+        .r3 {
+          font-size: 1rem;
+          text-align: end;
+        }
+        .r4 {
+          font-size: 2rem;
+        }
 
-  #burger {
-    @include flexit(column);
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 3;
-    position: absolute;
-    transition: 1s ease-in-out;
-    transition-delay: 0.2s;
-    // left: 1.5vw;
-    // top: 2.5vh;
+        .r5 {
+          color: $theme;
+          font-size: 3rem;
+        }
+        .r6 {
+          font-size: 5rem;
+        }
+      }
 
-    .line1,
-    .line2,
-    .line3 {
-      cursor: pointer;
-      height: 33.33%;
-      margin: 0;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.801);
-    }
-  }
-
-  #greeting {
-    min-width: fit-content;
-    @include flexit(column);
-    height: fit-content;
-
-    .intro {
-      text-align: center;
-      width: fit-content;
-      font-family: "Montserrat", sans-serif;
-      font-size: 3rem;
-      width: 100%;
-      z-index: 1;
-    }
-    .vtx {
-      text-align: center;
-      font-family: "Roboto", sans-serif;
-      font-size: 6.5em;
-      width: 100%;
-      z-index: 1;
-    }
-  }
-
-  .sphere-animation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 580px;
-    height: 580px;
-    margin: -290px 0 0 -290px;
-  }
-
-  .sphere path {
-    fill: url(#sphereGradient);
-    stroke-width: 1px;
-    stroke: rgba(80, 80, 80, 0.35);
-    backface-visibility: hidden;
-  }
-
-  @media (min-width: 500px) {
-    .sphere path {
-      stroke-width: 0.4px;
+      #skillset {
+        background: rgba(136, 136, 136, 0.671);
+        position: absolute;
+        top: 55%;
+        width: 100%;
+        padding: 4vw 7vw;
+        @include flexit(row);
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .skill {
+          img {
+            width: 5.4rem;
+          }
+        }
+      }
     }
   }
 }

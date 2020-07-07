@@ -1,3 +1,31 @@
+//----------------------Arrow navigation---------------------------------
+document.getElementsByClassName("right")[0].addEventListener("click", () => {
+  window.scroll({
+    left: window.innerWidth + 1,
+    behavior: "smooth",
+  });
+});
+document.getElementsByClassName("left")[0].addEventListener("click", () => {
+  window.scroll({
+    left: -window.innerWidth - 1,
+    behavior: "smooth",
+  });
+});
+
+document.getElementsByClassName("down")[0].addEventListener("click", () => {
+  window.scroll({
+    top: window.innerHeight + 1,
+    behavior: "smooth",
+  });
+});
+document.getElementsByClassName("down")[1].addEventListener("click", () => {
+  window.scroll({
+    top: window.innerHeight + 1,
+    behavior: "smooth",
+  });
+});
+
+//--------------------------------LANDING-------------------------------------------------
 let line1 = document.querySelector(".line1");
 let line2 = document.querySelector(".line2");
 let line3 = document.querySelector(".line3");
@@ -149,7 +177,7 @@ burger.addEventListener("click", () => {
       height: {
         value: ["15%", "33.33%"],
         duration: 100,
-        delay: 700,
+        delay: 650,
         easing: "linear",
       },
     });
@@ -218,3 +246,42 @@ burger.addEventListener("click", () => {
     burger.style.cursor = "pointer";
   }
 });
+
+//--------------------------------ABOUT-------------------------------------------------
+
+let about = document.getElementById("about");
+let words = [
+  "Vtrix",
+  "WEB-D",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "ReactJS",
+  "Vue",
+  "SASS",
+  "BootStrap",
+  "MaterialUI",
+  "NodeJS",
+  "MongoDB",
+];
+window.addEventListener("load", function () {
+  let randoms = document.getElementsByClassName("randoms");
+  for (let i = 0; i < randoms.length; i++) {
+    changeWord(randoms[i]);
+  }
+});
+
+function changeWord(a) {
+  a.style.opacity = "0.5";
+  a.innerHTML = words[getRandomInt(0, words.length - 1)];
+  setTimeout(function () {
+    a.style.opacity = "1";
+  }, 600);
+  setTimeout(function () {
+    changeWord(a);
+  }, getRandomInt(800, 1000));
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}

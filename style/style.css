@@ -9,14 +9,62 @@ body {
   overflow: hidden;
 }
 
-#landing {
-  background: black;
-  opacity: 0.9;
-  overflow: auto;
+body .arrow {
+  width: 3.4rem;
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+
+body .arrow img {
   width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  height: 100%;
+}
+
+body .left {
+  left: 4%;
+  top: 45%;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+body .right {
+  right: 4%;
+  top: 45%;
+}
+
+body .down {
+  right: 48%;
+  bottom: 4%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+body .colorit {
+  color: #2005bb;
+}
+
+body #top {
+  min-height: 100vh;
+  width: 2vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+body #top #landing {
+  overflow: hidden;
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  background: -webkit-gradient(linear, left top, right top, from(#000000), to(#222222));
+  background: linear-gradient(to right, #000000, #222222);
+  opacity: 0.9;
+  width: 100vw;
   background-size: cover;
   min-height: 100vh;
   color: #ffffffcb;
@@ -37,8 +85,8 @@ body {
       flex-wrap: wrap;
 }
 
-#landing #navbar {
-  background: rgba(0, 0, 0, 0.527);
+body #top #landing #navbar {
+  background: rgba(0, 0, 0, 0.788);
   width: 0;
   height: 0;
   position: absolute;
@@ -49,7 +97,7 @@ body {
   overflow: hidden;
 }
 
-#landing #navbar .nav_list {
+body #top #landing #navbar .nav_list {
   position: relative;
   left: 10%;
   height: 60%;
@@ -61,20 +109,21 @@ body {
   z-index: 101;
 }
 
-#landing #navbar .nav_list li {
+body #top #landing #navbar .nav_list li {
   font-size: 3rem;
   padding: 10px;
   z-index: 2;
   cursor: pointer;
 }
 
-#landing #navbar .nav_list li:hover, #landing #navbar .nav_list li:active {
+body #top #landing #navbar .nav_list li:hover, body #top #landing #navbar .nav_list li:active {
   font-size: 3.8rem;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  color: #2005bb;
 }
 
-#landing #navbar .cross {
+body #top #landing #navbar .cross {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -83,14 +132,14 @@ body {
   right: 7%;
 }
 
-#landing #navbar .cross img {
+body #top #landing #navbar .cross img {
   z-index: 4;
   width: 0;
-  opacity: 0.7;
+  opacity: 0.9;
   cursor: pointer;
 }
 
-#landing #burger {
+body #top #landing #burger {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,9 +167,9 @@ body {
           transition-delay: 0.2s;
 }
 
-#landing #burger .line1,
-#landing #burger .line2,
-#landing #burger .line3 {
+body #top #landing #burger .line1,
+body #top #landing #burger .line2,
+body #top #landing #burger .line3 {
   cursor: pointer;
   height: 33.33%;
   margin: 0;
@@ -128,7 +177,7 @@ body {
   background-color: rgba(255, 255, 255, 0.801);
 }
 
-#landing #greeting {
+body #top #landing #greeting {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -152,7 +201,7 @@ body {
   height: fit-content;
 }
 
-#landing #greeting .intro {
+body #top #landing #greeting .intro {
   text-align: center;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -163,7 +212,7 @@ body {
   z-index: 1;
 }
 
-#landing #greeting .vtx {
+body #top #landing #greeting .vtx {
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 6.5em;
@@ -171,7 +220,7 @@ body {
   z-index: 1;
 }
 
-#landing .sphere-animation {
+body #top #landing .sphere-animation {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -180,7 +229,7 @@ body {
   margin: -290px 0 0 -290px;
 }
 
-#landing .sphere path {
+body #top #landing .sphere path {
   fill: url(#sphereGradient);
   stroke-width: 1px;
   stroke: rgba(80, 80, 80, 0.35);
@@ -189,8 +238,153 @@ body {
 }
 
 @media (min-width: 500px) {
-  #landing .sphere path {
+  body #top #landing .sphere path {
     stroke-width: 0.4px;
   }
+}
+
+body #top #about {
+  position: relative;
+  background: -webkit-gradient(linear, left top, right top, from(#000000), to(#434343));
+  background: linear-gradient(to right, #000000, #434343);
+  z-index: 100;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+body #top #about .aboutTitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 4rem;
+  color: #ffffffcb;
+  border-left: 7px solid #2005bb;
+  padding: 5px 12px;
+  margin: 5vh 0 0 3vw;
+}
+
+body #top #about .randomwords {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transform: translateY(10vh);
+          transform: translateY(10vh);
+}
+
+body #top #about .randomwords .randoms {
+  color: #888888;
+  font-family: "Roboto", sans-serif;
+}
+
+body #top #about .randomwords .R1 {
+  margin-bottom: -40px;
+}
+
+body #top #about .randomwords .R2 {
+  margin-bottom: -15px;
+}
+
+body #top #about .randomwords .R1,
+body #top #about .randomwords .R2,
+body #top #about .randomwords .R3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: "row";
+          flex-direction: "row";
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+body #top #about .randomwords .r1,
+body #top #about .randomwords .r2,
+body #top #about .randomwords .r3,
+body #top #about .randomwords .r4,
+body #top #about .randomwords .r5,
+body #top #about .randomwords .r6 {
+  width: 50%;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+body #top #about .randomwords .r1 {
+  font-size: 7rem;
+  text-align: end;
+}
+
+body #top #about .randomwords .r2 {
+  font-size: 2rem;
+  text-align: end;
+}
+
+body #top #about .randomwords .r3 {
+  font-size: 1rem;
+  text-align: end;
+}
+
+body #top #about .randomwords .r4 {
+  font-size: 2rem;
+}
+
+body #top #about .randomwords .r5 {
+  color: #2005bb;
+  font-size: 3rem;
+}
+
+body #top #about .randomwords .r6 {
+  font-size: 5rem;
+}
+
+body #top #about #skillset {
+  background: rgba(136, 136, 136, 0.671);
+  position: absolute;
+  top: 55%;
+  width: 100%;
+  padding: 4vw 7vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+body #top #about #skillset .skill img {
+  width: 5.4rem;
 }
 /*# sourceMappingURL=style.css.map */

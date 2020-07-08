@@ -5,13 +5,36 @@ document.getElementsByClassName("right")[0].addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+document.getElementsByClassName("right")[1].addEventListener("click", () => {
+  window.scroll({
+    left: window.innerWidth + 1,
+    behavior: "smooth",
+  });
+});
 document.getElementsByClassName("left")[0].addEventListener("click", () => {
   window.scroll({
     left: -window.innerWidth - 1,
     behavior: "smooth",
   });
 });
-
+// document.getElementsByClassName("left")[1].addEventListener("click", () => {
+//   window.scroll({
+//     left: -window.innerWidth - 1,
+//     behavior: "smooth",
+//   });
+// });
+document.getElementsByClassName("up")[0].addEventListener("click", () => {
+  window.scroll({
+    top: -window.innerHeight - 1,
+    behavior: "smooth",
+  });
+});
+// document.getElementsByClassName("up")[1].addEventListener("click", () => {
+//   window.scroll({
+//     top: window.innerHeight + 1,
+//     behavior: "smooth",
+//   });
+// });
 document.getElementsByClassName("down")[0].addEventListener("click", () => {
   window.scroll({
     top: window.innerHeight + 1,
@@ -23,6 +46,14 @@ document.getElementsByClassName("down")[1].addEventListener("click", () => {
     top: window.innerHeight + 1,
     behavior: "smooth",
   });
+});
+anime({
+  targets: [".arrow"],
+  loop: true,
+  opacity: 1,
+  easing: "easeInOutSine",
+  duration: 1400,
+  direction: "alternate",
 });
 
 //--------------------------------LANDING-------------------------------------------------

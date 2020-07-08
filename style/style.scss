@@ -50,11 +50,22 @@ $theme: #2005bb;
   transition: 0.2s;
 }
 body {
+  // overflow: hidden;
+
+  .title {
+    @include heading();
+    margin: 5vh 0 0 5vw;
+  }
   .arrow {
     width: 3.4rem;
     position: absolute;
+    opacity: 0;
     cursor: pointer;
     z-index: 2;
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -69,22 +80,26 @@ body {
     right: 4%;
     top: 45%;
   }
+  .up {
+    right: 48%;
+    top: 4%;
+    transform: rotate(-90deg);
+  }
   .down {
     right: 48%;
     bottom: 4%;
     transform: rotate(90deg);
   }
-  overflow: hidden;
   .colorit {
     color: $theme;
   }
 
   #top {
+    min-width: 200vw;
     min-height: 100vh;
-    width: 2vw;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 
     #landing {
       overflow: hidden;
@@ -93,7 +108,6 @@ body {
       background: linear-gradient(to right, #000000, #222222);
       opacity: 0.9;
       width: 100vw;
-      background-size: cover;
       min-height: 100vh;
       color: #ffffffcb;
       @include flexit(column);
@@ -222,14 +236,10 @@ body {
       background: linear-gradient(to right, #000000, #434343);
       z-index: 100;
       width: 100vw;
-      min-height: 100vh;
+      height: 100vh;
       overflow: auto;
       grid-column: 2/3;
 
-      .aboutTitle {
-        @include heading();
-        margin: 5vh 0 0 3vw;
-      }
       .randomwords {
         @include flexit(column);
         transform: translateY(10vh);
@@ -297,6 +307,192 @@ body {
             width: 5.4rem;
           }
         }
+      }
+    }
+  }
+  #bottom {
+    min-width: 200vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    #projects {
+      position: relative;
+      background: linear-gradient(to right, #000000, #434343);
+      z-index: 100;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+
+      .container {
+        @include flexit(row);
+        justify-content: space-around;
+        width: 100%;
+        padding: 2vw;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        .card {
+          margin: 0 20px;
+          position: relative;
+          border-radius: 10px;
+
+          .icon {
+            padding: 20% 0;
+            color: #ffffffe1;
+            text-shadow: 1px 1px 2px #000000b9;
+            font-family: "Montserrat", sans-serif;
+            text-align: center;
+            font-size: 2.4em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(
+                rgba(100, 100, 100, 0.411),
+                rgba(0, 0, 0, 0.363)
+              ),
+              url("../img/headbg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: 0.7s;
+            z-index: 1;
+          }
+
+          &:nth-child(1) .icon {
+            background-image: linear-gradient(
+                rgba(100, 100, 100, 0.322),
+                rgba(0, 0, 0, 0.295)
+              ),
+              url("../img/projects/OnGithub.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+          &:nth-child(2) .icon {
+            background-image: linear-gradient(
+                rgba(100, 100, 100, 0.322),
+                rgba(0, 0, 0, 0.295)
+              ),
+              url("../img/projects/todo\ list.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+          &:nth-child(3) .icon {
+            background-image: linear-gradient(
+                rgba(100, 100, 100, 0.322),
+                rgba(0, 0, 0, 0.295)
+              ),
+              url("../img/projects/weather\ \(2\).png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+          &:nth-child(4) .icon {
+            background-image: linear-gradient(
+                rgba(100, 100, 100, 0.322),
+                rgba(0, 0, 0, 0.295)
+              ),
+              url("../img/projects/music\ maker.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+
+          .face {
+            width: 300px;
+            height: 200px;
+            transition: 0.5s;
+          }
+
+          .face.face1 {
+            position: relative;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            transform: translateY(100px);
+          }
+
+          &:hover .face.face1 {
+            background: $theme;
+            transform: translateY(0px);
+          }
+
+          .face.face1 .content {
+            opacity: 1;
+            transition: 0.5s;
+          }
+
+          &:hover .face.face1 .content {
+            opacity: 1;
+          }
+
+          .face.face1 .content i {
+            max-width: 100px;
+          }
+
+          .face.face2 {
+            font-family: "Raleway", sans-serif;
+            position: relative;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 25px;
+            box-sizing: border-box;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            transform: translateY(-100px);
+          }
+
+          &:hover .face.face2 {
+            transform: translateY(0);
+          }
+
+          .face.face2 .content p {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #414141;
+          }
+          .links {
+            width: 100%;
+            padding: 10%;
+            @include flexit(row);
+            justify-content: space-evenly;
+            a {
+              text-decoration: none;
+              color: #414141;
+              opacity: 0.8;
+              .link1 {
+                width: 3.5em;
+              }
+              .link2 {
+                width: 2em;
+              }
+              &:hover,
+              &:active {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+      .more {
+        position: relative;
+        left: 87vw;
+        width: fit-content;
+        padding: 20px;
+        color: $theme;
+        font-size: 1.1em;
+        font-family: "Roboto", sans-serif;
       }
     }
   }

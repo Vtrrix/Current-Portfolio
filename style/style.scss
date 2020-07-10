@@ -32,7 +32,6 @@ $theme: #2005bb;
   text-align: center;
   font-size: 16px;
   width: 100%;
-  height: 0;
   overflow-y: hidden;
   &:hover,
   &:active {
@@ -42,7 +41,6 @@ $theme: #2005bb;
 
 //mixins for contact page
 @mixin u_stuff {
-  display: block;
   width: 100%;
   position: relative;
   top: 15px;
@@ -317,6 +315,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     #projects {
+      grid-column: 1/2;
       position: relative;
       background: linear-gradient(to right, #000000, #434343);
       z-index: 100;
@@ -493,6 +492,125 @@ body {
         color: $theme;
         font-size: 1.1em;
         font-family: "Roboto", sans-serif;
+      }
+    }
+    #contact {
+      position: relative;
+      background-image: linear-gradient(
+          rgba(65, 65, 65, 0.685),
+          rgba(0, 0, 0, 0.651)
+        ),
+        url("../img/contact_bg.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+      z-index: 100;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      grid-column: 2/3;
+
+      form {
+        margin: 30px;
+        @include flexit(column);
+        align-content: space-around;
+        min-height: 600px;
+        overflow-x: hidden;
+
+        .name {
+          width: 50%;
+          max-width: 600px;
+          min-width: 300px;
+          height: 60px;
+          padding: 45px;
+
+          .uname {
+            @include u_stuff();
+          }
+          input[type="text"] {
+            width: 100%;
+            background: rgba(255, 255, 255, 0);
+            border: none;
+            border-bottom: 1px solid whitesmoke;
+            color: whitesmoke;
+            text-decoration: none;
+          }
+        }
+
+        .mail {
+          width: 50%;
+          max-width: 600px;
+          min-width: 300px;
+          height: 60px;
+          padding: 45px;
+
+          .umail {
+            @include u_stuff();
+          }
+
+          input[type="email"] {
+            width: 100%;
+            background: rgba(255, 255, 255, 0);
+            border: none;
+            border-bottom: 1px solid whitesmoke;
+            color: whitesmoke;
+            text-decoration: none;
+          }
+        }
+        .subject {
+          width: 50%;
+          max-width: 600px;
+          min-width: 300px;
+          height: 60px;
+          padding: 45px;
+
+          .usubject {
+            @include u_stuff();
+          }
+
+          input[type="text"] {
+            width: 100%;
+            background: rgba(255, 255, 255, 0);
+            border: none;
+            border-bottom: 1px solid whitesmoke;
+            color: whitesmoke;
+            text-decoration: none;
+          }
+        }
+        .msg {
+          width: 50%;
+          max-width: 600px;
+          min-width: 300px;
+          height: 200px;
+          padding: 45px;
+          overflow: hidden;
+
+          .umsg {
+            @include u_stuff();
+            top: 0px;
+          }
+
+          textarea {
+            height: 90%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0);
+            border: none;
+            border-bottom: 1px solid whitesmoke;
+            color: whitesmoke;
+            text-decoration: none;
+            resize: none;
+            font-family: "Raleway", sans-serif;
+            font-size: 14px;
+          }
+        }
+        .buttonContainer {
+          width: 200px;
+          height: 50px;
+          button {
+            @include buttons();
+            cursor: pointer;
+          }
+        }
       }
     }
   }

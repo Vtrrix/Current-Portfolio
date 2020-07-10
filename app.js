@@ -17,24 +17,24 @@ document.getElementsByClassName("left")[0].addEventListener("click", () => {
     behavior: "smooth",
   });
 });
-// document.getElementsByClassName("left")[1].addEventListener("click", () => {
-//   window.scroll({
-//     left: -window.innerWidth - 1,
-//     behavior: "smooth",
-//   });
-// });
+document.getElementsByClassName("left")[1].addEventListener("click", () => {
+  window.scroll({
+    left: -window.innerWidth - 1,
+    behavior: "smooth",
+  });
+});
 document.getElementsByClassName("up")[0].addEventListener("click", () => {
   window.scroll({
     top: -window.innerHeight - 1,
     behavior: "smooth",
   });
 });
-// document.getElementsByClassName("up")[1].addEventListener("click", () => {
-//   window.scroll({
-//     top: window.innerHeight + 1,
-//     behavior: "smooth",
-//   });
-// });
+document.getElementsByClassName("up")[1].addEventListener("click", () => {
+  window.scroll({
+    top: -window.innerHeight - 1,
+    behavior: "smooth",
+  });
+});
 document.getElementsByClassName("down")[0].addEventListener("click", () => {
   window.scroll({
     top: window.innerHeight + 1,

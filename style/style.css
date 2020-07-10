@@ -407,6 +407,9 @@ body #bottom {
 }
 
 body #bottom #projects {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
   position: relative;
   background: -webkit-gradient(linear, left top, right top, from(#000000), to(#434343));
   background: linear-gradient(to right, #000000, #434343);
@@ -632,5 +635,191 @@ body #bottom #projects .more {
   color: #2005bb;
   font-size: 1.1em;
   font-family: "Roboto", sans-serif;
+}
+
+body #bottom #contact {
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(65, 65, 65, 0.685)), to(rgba(0, 0, 0, 0.651))), url("../img/contact_bg.jpg");
+  background-image: linear-gradient(rgba(65, 65, 65, 0.685), rgba(0, 0, 0, 0.651)), url("../img/contact_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+body #bottom #contact form {
+  margin: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  min-height: 600px;
+  overflow-x: hidden;
+}
+
+body #bottom #contact form .name {
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  height: 60px;
+  padding: 45px;
+}
+
+body #bottom #contact form .name .uname {
+  width: 100%;
+  position: relative;
+  top: 15px;
+  pointer-events: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body #bottom #contact form .name input[type="text"] {
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+body #bottom #contact form .mail {
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  height: 60px;
+  padding: 45px;
+}
+
+body #bottom #contact form .mail .umail {
+  width: 100%;
+  position: relative;
+  top: 15px;
+  pointer-events: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body #bottom #contact form .mail input[type="email"] {
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+body #bottom #contact form .subject {
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  height: 60px;
+  padding: 45px;
+}
+
+body #bottom #contact form .subject .usubject {
+  width: 100%;
+  position: relative;
+  top: 15px;
+  pointer-events: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+body #bottom #contact form .subject input[type="text"] {
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+body #bottom #contact form .msg {
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  height: 200px;
+  padding: 45px;
+  overflow: hidden;
+}
+
+body #bottom #contact form .msg .umsg {
+  width: 100%;
+  position: relative;
+  top: 15px;
+  pointer-events: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  top: 0px;
+}
+
+body #bottom #contact form .msg textarea {
+  height: 90%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  color: whitesmoke;
+  text-decoration: none;
+  resize: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+}
+
+body #bottom #contact form .buttonContainer {
+  width: 200px;
+  height: 50px;
+}
+
+body #bottom #contact form .buttonContainer button {
+  background-color: #2005bb;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  overflow-y: hidden;
+  cursor: pointer;
+}
+
+body #bottom #contact form .buttonContainer button:hover, body #bottom #contact form .buttonContainer button:active {
+  background-color: #2004c4;
 }
 /*# sourceMappingURL=style.css.map */

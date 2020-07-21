@@ -63,6 +63,7 @@ body .down {
 
 body .colorit {
   color: #2005bb;
+  text-shadow: 0px 0px 12px #2005bb;
 }
 
 body #top {
@@ -141,6 +142,7 @@ body #top #landing #navbar .nav_list li:hover, body #top #landing #navbar .nav_l
   -webkit-transition: 0.2s;
   transition: 0.2s;
   color: #2005bb;
+  text-shadow: 0px 0px 12px #2005bb;
 }
 
 body #top #landing #navbar .cross {
@@ -363,6 +365,7 @@ body #top #about .randomwords .r4 {
 body #top #about .randomwords .r5 {
   color: #2005bb;
   font-size: 3rem;
+  text-shadow: 0px 0px 12px #2005bb;
 }
 
 body #top #about .randomwords .r6 {

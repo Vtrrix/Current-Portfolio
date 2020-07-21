@@ -90,8 +90,8 @@ body {
   }
   .colorit {
     color: $theme;
+    text-shadow: 0px 0px 12px $theme;
   }
-
   #top {
     min-width: 200vw;
     min-height: 100vh;
@@ -141,6 +141,7 @@ body {
               font-size: 3.8rem;
               transition: 0.2s;
               color: $theme;
+              text-shadow: 0px 0px 12px $theme;
             }
           }
         }
@@ -285,6 +286,7 @@ body {
         .r5 {
           color: $theme;
           font-size: 3rem;
+          text-shadow: 0px 0px 12px $theme;
         }
         .r6 {
           font-size: 5rem;

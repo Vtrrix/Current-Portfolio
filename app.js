@@ -57,15 +57,13 @@ anime({
 });
 
 //--------------------------------LANDING-------------------------------------------------
-let line1 = document.querySelector(".line1");
-let line2 = document.querySelector(".line2");
-let line3 = document.querySelector(".line3");
+
 let burger = document.getElementById("burger");
 let navbar = document.getElementById("navbar");
 
 window.addEventListener("load", () => {
   anime({
-    targets: [".line1 ", " .line2", ".line3"],
+    targets: [".line "],
     height: {
       value: ["33.33%", "15%"],
       duration: 1200,
@@ -197,18 +195,18 @@ burger.addEventListener("click", () => {
     burger.style.cursor = "default";
 
     anime({
-      targets: [".line1 ", " .line2", ".line3"],
+      targets: [".line "],
 
       margin: {
         value: ["3% , 0%", "0% 0%"],
-        duration: 400,
-        delay: 200,
+        duration: 300,
+        delay: 100,
         easing: "linear",
       },
       height: {
         value: ["15%", "33.33%"],
         duration: 100,
-        delay: 650,
+        delay: 550,
         easing: "linear",
       },
     });
@@ -224,12 +222,12 @@ burger.addEventListener("click", () => {
       targets: "#back",
       width: {
         value: "3.5rem",
-        delay: 2000,
+        delay: 1500,
       },
       rotate: {
         value: 360,
-        delay: 2000,
-        duration: 1000,
+        delay: 1700,
+        duration: 700,
         easing: "easeInOutSine",
       },
     });
@@ -249,7 +247,7 @@ burger.addEventListener("click", () => {
     });
 
     anime({
-      targets: [".line1 ", " .line2", ".line3"],
+      targets: [".line "],
       margin: {
         value: ["0% 0%", "3% 0%"],
         duration: 500,

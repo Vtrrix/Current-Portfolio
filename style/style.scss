@@ -49,10 +49,82 @@ $theme: #2005bb;
 }
 body {
   overflow: hidden;
+  #burger {
+    @include flexit(column);
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 300;
+    position: fixed;
+    transition: 1s ease-in-out;
+    transition-delay: 0.2s;
+    // left: 1.5vw;
+    // top: 2.5vh;
 
+    #navbar {
+      background: rgba(0, 0, 0, 0.788);
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.2s ease-in-out;
+      overflow: hidden;
+
+      .nav_list {
+        position: relative;
+        left: 10%;
+        height: 60%;
+        font-family: "Montserrat", sans-serif;
+        margin: 16vh 8vw;
+        text-decoration: none;
+        list-style-type: none;
+        font-weight: 800;
+        z-index: 101;
+        li {
+          font-size: 3rem;
+          padding: 10px;
+          z-index: 2;
+          cursor: pointer;
+          color: #ffffffcb;
+
+          &:hover,
+          &:active {
+            font-size: 3.8rem;
+            transition: 0.2s;
+            color: $theme;
+            text-shadow: 0px 0px 12px $theme;
+          }
+        }
+      }
+
+      .cross {
+        width: fit-content;
+        position: absolute;
+        top: 7%;
+        right: 7%;
+        img {
+          z-index: 4;
+          width: 0;
+          // width: 3.5rem;
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .line {
+      cursor: pointer;
+      height: 33.33%;
+      margin: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.801);
+    }
+  }
   .title {
     @include heading();
-    margin: 5vh 0 0 5vw;
+    margin: 7vh 0 0 7vw;
   }
   .arrow {
     width: 3.4rem;
@@ -109,81 +181,6 @@ body {
       min-height: 100vh;
       color: #ffffffcb;
       @include flexit(column);
-
-      #navbar {
-        background: rgba(0, 0, 0, 0.788);
-        width: 0;
-        height: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: 0.2s ease-in-out;
-        overflow: hidden;
-
-        .nav_list {
-          position: relative;
-          left: 10%;
-          height: 60%;
-          font-family: "Montserrat", sans-serif;
-          margin: 16vh 8vw;
-          text-decoration: none;
-          list-style-type: none;
-          font-weight: 800;
-          z-index: 101;
-          li {
-            font-size: 3rem;
-            padding: 10px;
-            z-index: 2;
-            cursor: pointer;
-
-            &:hover,
-            &:active {
-              font-size: 3.8rem;
-              transition: 0.2s;
-              color: $theme;
-              text-shadow: 0px 0px 12px $theme;
-            }
-          }
-        }
-
-        .cross {
-          width: fit-content;
-          position: absolute;
-          top: 7%;
-          right: 7%;
-          img {
-            z-index: 4;
-            width: 0;
-            // width: 3.5rem;
-            opacity: 0.9;
-            cursor: pointer;
-          }
-        }
-      }
-
-      #burger {
-        @include flexit(column);
-        cursor: pointer;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0);
-        z-index: 3;
-        position: absolute;
-        transition: 1s ease-in-out;
-        transition-delay: 0.2s;
-        // left: 1.5vw;
-        // top: 2.5vh;
-
-        .line1,
-        .line2,
-        .line3 {
-          cursor: pointer;
-          height: 33.33%;
-          margin: 0;
-          width: 100%;
-          background-color: rgba(255, 255, 255, 0.801);
-        }
-      }
 
       #greeting {
         min-width: fit-content;
